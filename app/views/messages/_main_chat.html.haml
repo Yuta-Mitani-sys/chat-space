@@ -1,0 +1,42 @@
+.chat-main
+  .group-info
+    .group-info__left-box
+      .group-info__left-box__current-group test
+      %ul.group-info__left-box__member-list 
+        Member :
+        %li.group-info__left-box__member-list__member
+        鈴木
+        %li.group-info__left-box__member-list__member
+        元木
+        %li.group-info__left-box__member-list__member
+        大木
+    = link_to "#" do
+      .group-info__edit-btn Edit
+
+
+  .message-list
+    .message-box
+      .message-box__upper-info
+        .message-box__upper-info__name 三谷
+        %p.message-box__upper-info__name__data 2020/03/12(Thu) 23:53:33
+      .message-box__message おはよう
+    .message-box
+      .message-box__upper-info
+        .message-box__upper-info__name 三谷
+        %p.message-box__upper-info__name__data 2020/03/12(Thu) 23:53:33
+      .message-box__message おはよう
+    .message-box
+      .message-box__upper-info
+        .message-box__upper-info__name 三谷
+        %p.message-box__upper-info__name__data 2020/03/12(Thu) 23:53:33
+      .message-box__message おはよう
+
+
+  .message-info
+    %form.new-message
+      .new-message__input-box
+        %input{type: "text", class: "new-message__input-box__text", placeholder: "type a message"}
+        %label{class: "new-message__input-box__image"}
+          = icon('fa', 'image')
+          %input{type: "file", class: "new-message__input-box__image__file"}
+      %input{type: "submit", class: "new-message__submit-btn", value: "Send"}
