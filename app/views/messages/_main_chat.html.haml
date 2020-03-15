@@ -15,31 +15,15 @@
 
 
   .message-list
-    .message-box
-      .message-box__upper-info
-        .message-box__upper-info__name 三谷
-        %p.message-box__upper-info__name__data 2020/03/12(Thu) 23:53:33
-      .message-box__message おはよう
-    .message-box
-      .message-box__upper-info
-        .message-box__upper-info__name 三谷
-        %p.message-box__upper-info__name__data 2020/03/12(Thu) 23:53:33
-      .message-box__message おはよう
-    .message-box
-      .message-box__upper-info
-        .message-box__upper-info__name 三谷
-        %p.message-box__upper-info__name__data 2020/03/12(Thu) 23:53:33
-      .message-box__message おはよう
+    = render @messages
 
 
   .message-info
-    %form.new-message
-      .new-message__input-box
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'new-message__input-box__text', placeholder: 'type a message'
-        = f.label :image, class: 'new-message__input-box__image' do
-          = icon('fa', 'image')
-          = f.file_field :image, class: 'new-message__input-box__image__file'
-      %input{type: "submit", class: "new-message__submit-btn", value: "Send"}
-
-     
+    = form_for [@group, @message] do |f|
+      .new-message
+        .new-message__input-box
+          = f.text_field :content, class: 'new-message__input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'new-message__input-box__image' do
+            = icon('fa', 'image')
+            = f.file_field :image, class: 'new-message__input-box__image__file'
+        = f.submit 'Send', class: 'new-message__submit-btn'
