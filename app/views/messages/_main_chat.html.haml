@@ -35,8 +35,11 @@
   .message-info
     %form.new-message
       .new-message__input-box
-        %input{type: "text", class: "new-message__input-box__text", placeholder: "type a message"}
-        %label{class: "new-message__input-box__image"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'new-message__input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'new-message__input-box__image' do
           = icon('fa', 'image')
-          %input{type: "file", class: "new-message__input-box__image__file"}
+          = f.file_field :image, class: 'new-message__input-box__image__file'
       %input{type: "submit", class: "new-message__submit-btn", value: "Send"}
+
+     
