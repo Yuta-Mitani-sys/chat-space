@@ -9,6 +9,9 @@ a {
 .side-hedder a {
   color: $font-color;
 }
+.group a {
+  color: $font-color;
+}
 .wrapper {
   display: flex;
   height: 100vh;
@@ -54,7 +57,6 @@ a {
       }
       .group {
         margin: 0px 0px 40px;
-        color: $font-color;
         font-weight: bold;
         &__name {
           font-size: 15px;
