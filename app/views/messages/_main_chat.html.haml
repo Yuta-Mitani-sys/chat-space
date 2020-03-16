@@ -1,16 +1,14 @@
 .chat-main
   .group-info
     .group-info__left-box
-      .group-info__left-box__current-group test
+      .group-info__left-box__current-group
+        = @group.name
       %ul.group-info__left-box__member-list 
         Member :
-        %li.group-info__left-box__member-list__member
-        鈴木
-        %li.group-info__left-box__member-list__member
-        元木
-        %li.group-info__left-box__member-list__member
-        大木
-    = link_to "#" do
+        - @group.users.each do |user|
+          %li.group-info__left-box__member-list__member
+          = user.name
+    = link_to edit_group_path(@group) do
       .group-info__edit-btn Edit
 
 
